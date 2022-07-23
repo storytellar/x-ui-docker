@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  x-ui:
+    image: enwaiax/x-ui
+    container_name: x-ui
+    volumes:
+      - $PWD/db/:/etc/x-ui/
+      - $PWD/cert/:/root/cert/
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 54321:54321
